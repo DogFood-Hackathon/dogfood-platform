@@ -1,0 +1,7 @@
+.homepage {
+  /* min-height: 50vh; */
+  background-image: url("../assets/homeBG.png");
+  background-size:100% auto;
+  background-position: center -150px;
+  background-repeat: repeat-y;
+}
