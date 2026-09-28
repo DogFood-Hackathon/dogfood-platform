@@ -1,11 +1,6 @@
 .explore-events-page {
   min-height: 100vh;
-  /* padding: 55px 60px 80px; */
-  background-image: url("../assets/homeBG.png");
-  background-size: 100% auto;
-  background-position: top center;
-  background-repeat: repeat-y;
-  color: #f5f7fa;
+ 
 }
 
 .explore-events-header {

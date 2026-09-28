@@ -224,13 +224,15 @@ function CreateEvent() {
     <div className="create-event-page">
       <Navbar />
 
-      <div className="create-event-header">
-        <button
+      <button
           className="back-home-button"
           onClick={() => navigate("/")}
         >
           ← Back to Home
         </button>
+
+      <div className="create-event-header">
+        
 
         <span className="create-event-label">ORGANIZER</span>
         <h1>Create an Event</h1>

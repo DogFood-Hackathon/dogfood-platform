@@ -1,13 +1,6 @@
 .create-event-page {
-  min-height: 100vh;
-  padding: 50px 60px 80px;
+  min-height: 140vh;
 
-  background-image: url("../assets/homeBG.png");
-  background-size: 100% auto;
-  background-position: top center;
-  background-repeat: repeat-y;
-
-  color: #f5f5f7;
 }
 
 .create-event-header {
@@ -239,6 +232,7 @@
 .event-form {
   width: 100%;
   max-width: 720px;
+  margin-bottom: 50px;
 }
 
 .form-heading {
@@ -364,7 +358,7 @@
 
 .back-button,
 .next-button,
-.submit-button {
+.submit-button,.save-draft-button {
   padding: 10px 18px;
   border-radius: 8px;
   font-family: inherit;
@@ -390,15 +384,16 @@
 }
 
 .next-button,
-.submit-button {
+.submit-button,.save-draft-button {
   color: #ffffff;
   border: none;
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
   box-shadow: 0 5px 18px rgba(139, 92, 246, 0.25);
+  margin: 10px 10px 0px;
 }
 
 .next-button:hover,
-.submit-button:hover {
+.submit-button:hover,.save-draft-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
 }
@@ -523,7 +518,7 @@
 }
 
 .next-button,
-.submit-button {
+.submit-button,.save-draft-button {
   color: #ffffff;
   border: none;
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
@@ -531,7 +526,7 @@
 }
 
 .next-button:hover,
-.submit-button:hover {
+.submit-button:hover,.save-draft-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
 }
