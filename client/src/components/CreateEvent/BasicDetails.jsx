@@ -1,7 +1,6 @@
 import React from "react";
-// import "../../css/basicDetails.css";
 
-function BasicDetails() {
+function BasicDetails({ formData, updateFormData }) {
   return (
     <div className="event-form">
       <div className="form-heading">
@@ -18,6 +17,10 @@ function BasicDetails() {
           <input
             type="text"
             placeholder="e.g. HackFest 2026"
+            value={formData.hackathonName}
+            onChange={(e) =>
+              updateFormData("hackathonName", e.target.value)
+            }
           />
         </div>
 
@@ -28,6 +31,10 @@ function BasicDetails() {
           <input
             type="text"
             placeholder="A short description of your hackathon"
+            value={formData.shortDescription}
+            onChange={(e) =>
+              updateFormData("shortDescription", e.target.value)
+            }
           />
         </div>
 
@@ -36,6 +43,10 @@ function BasicDetails() {
           <textarea
             rows="5"
             placeholder="Describe your hackathon and what participants can expect"
+            value={formData.detailedDescription}
+            onChange={(e) =>
+              updateFormData("detailedDescription", e.target.value)
+            }
           ></textarea>
         </div>
 
@@ -46,6 +57,10 @@ function BasicDetails() {
           <input
             type="text"
             placeholder="e.g. ABC Coding Club"
+            value={formData.organizationName}
+            onChange={(e) =>
+              updateFormData("organizationName", e.target.value)
+            }
           />
         </div>
 
@@ -56,6 +71,10 @@ function BasicDetails() {
           <input
             type="email"
             placeholder="contact@example.com"
+            value={formData.organizationEmail}
+            onChange={(e) =>
+              updateFormData("organizationEmail", e.target.value)
+            }
           />
         </div>
 
@@ -64,6 +83,10 @@ function BasicDetails() {
           <input
             type="url"
             placeholder="https://example.com"
+            value={formData.organizationWebsite}
+            onChange={(e) =>
+              updateFormData("organizationWebsite", e.target.value)
+            }
           />
         </div>
       </div>

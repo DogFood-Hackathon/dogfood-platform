@@ -1,0 +1,744 @@
+.admin-submissions-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.admin-submissions-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.admin-submissions-header h1 {
+  margin: 0 0 7px;
+  color: #f5f7fa;
+  font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
+}
+
+.admin-submissions-header p {
+  margin: 0;
+  color: #9299a8;
+  font-size: 14px;
+}
+
+.admin-submissions-count {
+  padding: 8px 12px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 7px;
+  background: rgba(139, 92, 246, 0.07);
+  color: #b9a5f8;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.admin-submissions-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.admin-submissions-search {
+  height: 40px;
+  flex: 1;
+  max-width: 430px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  background: rgba(17, 20, 27, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  backdrop-filter: blur(14px);
+}
+
+.admin-submissions-search span {
+  color: #6f7787;
+  font-size: 18px;
+}
+
+.admin-submissions-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f5f7fa;
+  font-size: 12px;
+}
+
+.admin-submissions-search input::placeholder {
+  color: #626a7a;
+}
+
+.admin-submissions-filter {
+  height: 40px;
+  min-width: 145px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(17, 20, 27, 0.72);
+  color: #9299a8;
+  font-size: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+}
+
+.admin-submissions-filter:hover,
+.admin-submissions-filter:focus {
+  color: #f5f7fa;
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.admin-submissions-filter option {
+  background: #11141b;
+  color: #f5f7fa;
+}
+
+.admin-submissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-submission-card {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background: rgba(17, 20, 27, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 11px;
+  backdrop-filter: blur(14px);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-submission-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.8),
+    transparent
+  );
+  transition: left 0.45s ease;
+}
+
+.admin-submission-card:hover {
+  background: rgba(22, 24, 34, 0.82);
+  border-color: rgba(139, 92, 246, 0.28);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.2),
+    0 0 24px rgba(139, 92, 246, 0.06);
+}
+
+.admin-submission-card:hover::before {
+  left: 100%;
+}
+
+.admin-submission-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-submission-project {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.admin-submission-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.18);
+  color: #a78bfa;
+  font-size: 18px;
+}
+
+.admin-submission-project h3 {
+  margin: 0 0 4px;
+  color: #f5f7fa;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.admin-submission-project span {
+  color: #9299a8;
+  font-size: 11px;
+}
+
+.admin-submission-status {
+  padding: 5px 9px;
+  border-radius: 5px;
+  background: rgba(34, 197, 94, 0.07);
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  color: #6ee7a0;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.admin-submission-status.disqualified {
+  background: rgba(239, 68, 68, 0.07);
+  border-color: rgba(239, 68, 68, 0.16);
+  color: #fca5a5;
+}
+
+.admin-submission-details {
+  display: grid;
+  grid-template-columns: 1.1fr 1.6fr 1.4fr 0.9fr;
+  gap: 20px;
+  padding: 18px 0;
+}
+
+.admin-submission-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-submission-details span {
+  color: #626a7a;
+  font-size: 10px;
+}
+
+.admin-submission-details strong {
+  color: #cfd4dd;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.admin-judging-status.pending {
+  color: #d8b65a;
+}
+
+.admin-judging-status.in-progress {
+  color: #7db3f5;
+}
+
+.admin-judging-status.complete {
+  color: #6ee7a0;
+}
+
+.admin-judging-status.disqualified {
+  color: #fca5a5;
+}
+
+.admin-submission-judges {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.admin-submission-judges > span {
+  min-width: 100px;
+  color: #626a7a;
+  font-size: 10px;
+}
+
+.admin-submission-judges > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.admin-submission-judge-tag {
+  padding: 5px 8px;
+  border: 1px solid rgba(139, 92, 246, 0.18);
+  border-radius: 5px;
+  background: rgba(139, 92, 246, 0.07);
+  color: #b9a5f8;
+  font-size: 9px;
+}
+
+.admin-submission-no-judge {
+  color: #727a8a;
+  font-size: 10px;
+}
+
+.admin-submission-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-submission-footer > span {
+  color: #626a7a;
+  font-size: 10px;
+}
+
+.admin-submission-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.admin-submission-view-btn,
+.admin-submission-manage-btn,
+.admin-submission-assign-btn {
+  height: 34px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-submission-view-btn {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.035);
+  color: #a8afbd;
+}
+
+.admin-submission-view-btn span {
+  color: #8b5cf6;
+  font-size: 13px;
+}
+
+.admin-submission-view-btn:hover {
+  color: #ffffff;
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.admin-submission-manage-btn {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.035);
+  color: #9299a8;
+}
+
+.admin-submission-manage-btn:hover {
+  color: #ffffff;
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.admin-submission-assign-btn {
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  background: rgba(139, 92, 246, 0.1);
+  color: #c4b5fd;
+}
+
+.admin-submission-assign-btn:hover {
+  background: rgba(139, 92, 246, 0.18);
+  color: #ffffff;
+}
+
+.admin-submissions-empty {
+  padding: 60px 20px;
+  text-align: center;
+  background: rgba(17, 20, 27, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+}
+
+.admin-submissions-empty h3 {
+  margin: 0 0 7px;
+  color: #f5f7fa;
+  font-size: 15px;
+}
+
+.admin-submissions-empty p {
+  margin: 0;
+  color: #727a8a;
+  font-size: 12px;
+}
+
+.admin-submission-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(6px);
+}
+
+.admin-submission-modal {
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  background: rgba(17, 20, 27, 0.97);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.admin-submission-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.admin-submission-modal-header h2 {
+  margin: 0 0 5px;
+  color: #f5f7fa;
+  font-size: 18px;
+}
+
+.admin-submission-modal-header p {
+  margin: 0;
+  color: #727a8a;
+  font-size: 11px;
+}
+
+.admin-submission-modal-close {
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #9299a8;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.admin-submission-modal-close:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.admin-submission-modal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.admin-submission-modal-info div {
+  padding: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.admin-submission-modal-info span {
+  display: block;
+  margin-bottom: 5px;
+  color: #626a7a;
+  font-size: 9px;
+}
+
+.admin-submission-modal-info strong {
+  color: #d8dce4;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.admin-submission-modal-section {
+  margin-bottom: 20px;
+}
+
+.admin-submission-modal-section > label {
+  display: block;
+  margin-bottom: 8px;
+  color: #9299a8;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.admin-submission-status-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.admin-submission-status-actions button {
+  flex: 1;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #9299a8;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.admin-submission-status-actions button:hover,
+.admin-submission-status-actions button.active {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.1);
+  color: #c4b5fd;
+}
+
+.admin-submission-modal-judges {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.admin-submission-modal-judges > div {
+  min-height: 38px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.admin-submission-modal-judges span {
+  color: #d8dce4;
+  font-size: 10px;
+}
+
+.admin-submission-modal-judges button {
+  height: 27px;
+  padding: 0 9px;
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: 5px;
+  background: rgba(239, 68, 68, 0.04);
+  color: #b87979;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.admin-submission-modal-judges button:hover {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.08);
+  color: #fca5a5;
+}
+
+.admin-submission-modal-empty {
+  margin: 0;
+  color: #727a8a;
+  font-size: 10px;
+}
+
+.admin-submission-judge-select {
+  width: 100%;
+  height: 40px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 7px;
+  outline: none;
+  background: #11141b;
+  color: #f5f7fa;
+  font-size: 11px;
+}
+
+.admin-submission-judge-select:focus {
+  border-color: rgba(139, 92, 246, 0.45);
+}
+
+.admin-submission-judge-select option {
+  background: #11141b;
+  color: #f5f7fa;
+}
+
+.admin-submission-current-judges {
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.admin-submission-current-judges > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #626a7a;
+  font-size: 9px;
+}
+
+.admin-submission-current-judges > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.admin-submission-current-judges > div span {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.16);
+  color: #b9a5f8;
+  font-size: 9px;
+}
+
+.admin-submission-current-judges p {
+  margin: 0;
+  color: #727a8a;
+  font-size: 10px;
+}
+
+.admin-submission-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-submission-disqualify-btn,
+.admin-submission-restore-btn,
+.admin-submission-modal-cancel,
+.admin-submission-done-btn {
+  height: 35px;
+  padding: 0 13px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-submission-disqualify-btn {
+  border: 1px solid rgba(239, 68, 68, 0.18);
+  background: rgba(239, 68, 68, 0.05);
+  color: #c27f7f;
+}
+
+.admin-submission-disqualify-btn:hover {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.09);
+  color: #fca5a5;
+}
+
+.admin-submission-restore-btn {
+  border: 1px solid rgba(34, 197, 94, 0.18);
+  background: rgba(34, 197, 94, 0.05);
+  color: #79c995;
+}
+
+.admin-submission-restore-btn:hover {
+  border-color: rgba(34, 197, 94, 0.3);
+  background: rgba(34, 197, 94, 0.09);
+  color: #9ae6b4;
+}
+
+.admin-submission-modal-cancel {
+  margin-left: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: #9299a8;
+}
+
+.admin-submission-done-btn {
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.14);
+  color: #c4b5fd;
+}
+
+.admin-submission-modal-cancel:hover,
+.admin-submission-done-btn:hover {
+  color: #ffffff;
+  background: rgba(139, 92, 246, 0.2);
+}
+
+@media (max-width: 950px) {
+  .admin-submissions-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-submissions-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .admin-submissions-search {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-submission-actions {
+    flex-wrap: wrap;
+  }
+
+  .admin-submission-judges {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-submissions-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .admin-submissions-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-submissions-filter {
+    width: 100%;
+  }
+
+  .admin-submission-header {
+    flex-direction: column;
+  }
+
+  .admin-submissions-details {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-submission-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-submission-actions {
+    flex-direction: column;
+  }
+
+  .admin-submission-view-btn,
+  .admin-submission-manage-btn,
+  .admin-submission-assign-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .admin-submission-modal {
+    padding: 18px;
+  }
+
+  .admin-submission-modal-info {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-submission-status-actions {
+    flex-direction: column;
+  }
+
+  .admin-submission-modal-footer {
+    flex-wrap: wrap;
+  }
+}

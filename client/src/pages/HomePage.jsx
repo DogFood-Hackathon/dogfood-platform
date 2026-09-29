@@ -12,7 +12,7 @@ export default function Homepage() {
   return (
     <div className="homepage">
   
-    <Navbar/>
+    
     <Hero/>
     <Features/>
     <HowItWorks/>

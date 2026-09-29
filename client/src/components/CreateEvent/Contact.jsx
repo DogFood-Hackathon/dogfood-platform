@@ -1,7 +1,6 @@
 import React from "react";
-// import "../../css/contact.css";
 
-function Contact() {
+function Contact({ formData, updateFormData }) {
   return (
     <div className="event-form">
       <div className="form-heading">
@@ -18,6 +17,10 @@ function Contact() {
           <input
             type="text"
             placeholder="e.g. Event Coordinator"
+            value={formData.contactPerson}
+            onChange={(e) =>
+              updateFormData("contactPerson", e.target.value)
+            }
           />
         </div>
 
@@ -26,6 +29,10 @@ function Contact() {
           <input
             type="email"
             placeholder="contact@example.com"
+            value={formData.contactEmail}
+            onChange={(e) =>
+              updateFormData("contactEmail", e.target.value)
+            }
           />
         </div>
       </div>

@@ -68,7 +68,6 @@ function ExploreEvents() {
     
     <div className="explore-events-page">
 
-        <Navbar/>
         
       <div className="explore-events-header">
         <span>DISCOVER</span>

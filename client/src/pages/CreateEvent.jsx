@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 import BasicDetails from "../components/CreateEvent/BasicDetails";
@@ -13,6 +13,7 @@ function CreateEvent() {
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
   const [saved, setSaved] = useState(false);
+  const [maxUnlockedStep, setMaxUnlockedStep] = useState(0);
 
   const [formData, setFormData] = useState({
     hackathonName: "",
@@ -36,6 +37,21 @@ function CreateEvent() {
     contactPerson: "",
     contactEmail: "",
   });
+
+  useEffect(() => {
+  const savedDraft = localStorage.getItem("dogfood-event-draft");
+
+  if (savedDraft) {
+    setFormData(JSON.parse(savedDraft));
+  }
+}, []);
+
+useEffect(() => {
+  localStorage.setItem(
+    "dogfood-event-draft",
+    JSON.stringify(formData)
+  );
+}, [formData]);
 
   const steps = [
     {
@@ -87,76 +103,278 @@ function CreateEvent() {
   };
 
   const validateStep = () => {
-    if (activeStep === 0) {
-      if (!formData.hackathonName.trim()) {
-        alert("Please enter the Hackathon Name.");
-        return false;
-      }
-
-      if (!formData.shortDescription.trim()) {
-        alert("Please enter the Short Description.");
-        return false;
-      }
-
-      if (!formData.organizationName.trim()) {
-        alert("Please enter the Organization / Host Name.");
-        return false;
-      }
-
-      if (!formData.organizationEmail.trim()) {
-        alert("Please enter the Organization Email.");
-        return false;
-      }
+  if (activeStep === 0) {
+    if (!formData.hackathonName.trim()) {
+      alert("Please enter the Hackathon Name.");
+      return false;
     }
 
-    if (activeStep === 1) {
-      if (!formData.registrationDeadline) {
-        alert("Please enter the Registration Deadline.");
-        return false;
-      }
-
-      if (!formData.hackathonStart) {
-        alert("Please enter the Hackathon Start Date.");
-        return false;
-      }
-
-      if (!formData.hackathonEnd) {
-        alert("Please enter the Hackathon End Date.");
-        return false;
-      }
-
-      if (!formData.submissionDeadline) {
-        alert("Please enter the Submission Deadline.");
-        return false;
-      }
+    if (!formData.shortDescription.trim()) {
+      alert("Please enter the Short Description.");
+      return false;
     }
 
-    if (activeStep === 2) {
-      if (!formData.tracks.trim()) {
-        alert("Please enter at least one Track.");
-        return false;
-      }
-
-      if (!formData.prizes.trim()) {
-        alert("Please enter the Prizes.");
-        return false;
-      }
+    if (!formData.organizationName.trim()) {
+      alert("Please enter the Organization / Host Name.");
+      return false;
     }
 
-    return true;
-  };
+    if (!formData.organizationEmail.trim()) {
+      alert("Please enter the Organization Email.");
+      return false;
+    }
+  }
+
+  if (activeStep === 1) {
+    if (!formData.registrationStart) {
+      alert("Please enter the Registration Start Date.");
+      return false;
+    }
+
+    if (!formData.registrationDeadline) {
+      alert("Please enter the Registration Deadline.");
+      return false;
+    }
+
+    if (!formData.hackathonStart) {
+      alert("Please enter the Hackathon Start Date.");
+      return false;
+    }
+
+    if (!formData.hackathonEnd) {
+      alert("Please enter the Hackathon End Date.");
+      return false;
+    }
+
+    if (!formData.submissionDeadline) {
+      alert("Please enter the Submission Deadline.");
+      return false;
+    }
+
+    if (formData.registrationDeadline <= formData.registrationStart) {
+      alert("Registration Deadline must be after Registration Start Date.");
+      return false;
+    }
+
+    if (formData.hackathonStart < formData.registrationDeadline) {
+      alert("Hackathon Start Date must be on or after Registration Deadline.");
+      return false;
+    }
+
+    if (formData.hackathonEnd <= formData.hackathonStart) {
+      alert("Hackathon End Date must be after Hackathon Start Date.");
+      return false;
+    }
+
+    if (formData.submissionDeadline < formData.hackathonEnd) {
+      alert("Submission Deadline cannot be before Hackathon End Date.");
+      return false;
+    }
+  }
+
+  if (activeStep === 2) {
+    if (!formData.tracks.trim()) {
+      alert("Please enter at least one Track.");
+      return false;
+    }
+
+    if (!formData.prizes.trim()) {
+      alert("Please enter the Prizes.");
+      return false;
+    }
+  }
+
+  return true;
+};
 
   const handleNext = () => {
-    if (!validateStep()) {
-      return;
-    }
+  if (activeStep > maxUnlockedStep) {
+    alert("Please complete the previous steps first.");
+    return;
+  }
 
-    saveDraft();
+  if (!validateStep()) return;
 
-    if (activeStep < steps.length - 1) {
-      setActiveStep(activeStep + 1);
-    }
+  saveDraft();
+
+  if (activeStep < steps.length - 1) {
+    const nextStep = activeStep + 1;
+
+    setMaxUnlockedStep((previous) =>
+      Math.max(previous, nextStep)
+    );
+
+    setActiveStep(nextStep);
+  }
+};
+
+const validateAllSteps = () => {
+  if (!formData.hackathonName.trim()) {
+    alert("Please complete Basic Details: Hackathon Name.");
+    setActiveStep(0);
+    return false;
+  }
+
+  if (!formData.shortDescription.trim()) {
+    alert("Please complete Basic Details: Short Description.");
+    setActiveStep(0);
+    return false;
+  }
+
+  if (!formData.organizationName.trim()) {
+    alert("Please complete Basic Details: Organization / Host Name.");
+    setActiveStep(0);
+    return false;
+  }
+
+  if (!formData.organizationEmail.trim()) {
+    alert("Please complete Basic Details: Organization Email.");
+    setActiveStep(0);
+    return false;
+  }
+
+  if (!formData.registrationStart) {
+    alert("Please complete Schedule: Registration Start Date.");
+    setActiveStep(1);
+    return false;
+  }
+
+  if (!formData.registrationDeadline) {
+    alert("Please complete Schedule: Registration Deadline.");
+    setActiveStep(1);
+    return false;
+  }
+
+  if (!formData.hackathonStart) {
+    alert("Please complete Schedule: Hackathon Start Date.");
+    setActiveStep(1);
+    return false;
+  }
+
+  if (!formData.hackathonEnd) {
+    alert("Please complete Schedule: Hackathon End Date.");
+    setActiveStep(1);
+    return false;
+  }
+
+  if (!formData.submissionDeadline) {
+    alert("Please complete Schedule: Submission Deadline.");
+    setActiveStep(1);
+    return false;
+  }
+
+  if (formData.registrationDeadline <= formData.registrationStart) {
+    alert("Registration Deadline must be after Registration Start Date.");
+    setActiveStep(1);
+    return false;
+  }
+
+  if (formData.hackathonStart < formData.registrationDeadline) {
+    alert("Hackathon Start Date must be on or after Registration Deadline.");
+    setActiveStep(1);
+    return false;
+  }
+
+  if (formData.hackathonEnd <= formData.hackathonStart) {
+    alert("Hackathon End Date must be after Hackathon Start Date.");
+    setActiveStep(1);
+    return false;
+  }
+
+  if (formData.submissionDeadline < formData.hackathonEnd) {
+    alert("Submission Deadline cannot be before Hackathon End Date.");
+    setActiveStep(1);
+    return false;
+  }
+
+  if (!formData.tracks.trim()) {
+    alert("Please complete Hackathon Details: Tracks.");
+    setActiveStep(2);
+    return false;
+  }
+
+  if (!formData.prizes.trim()) {
+    alert("Please complete Hackathon Details: Prizes.");
+    setActiveStep(2);
+    return false;
+  }
+
+  return true;
+};
+
+
+const submitEvent = () => {
+  if (!validateAllSteps()) return;
+
+  const newEvent = {
+    id: Date.now(),
+    ...formData,
+    status: "pending_approval",
+    submittedAt: new Date().toISOString(),
   };
+
+  console.log("EVENT SUBMISSION PAYLOAD:");
+  console.log(newEvent);
+
+  console.log("JSON PAYLOAD:");
+  console.log(JSON.stringify(newEvent, null, 2));
+
+  const submittedEvents =
+    JSON.parse(localStorage.getItem("dogfood-submitted-events")) || [];
+
+  submittedEvents.push(newEvent);
+
+  localStorage.setItem(
+    "dogfood-submitted-events",
+    JSON.stringify(submittedEvents)
+  );
+
+  localStorage.removeItem("dogfood-event-draft");
+
+  alert("Event submitted successfully for admin approval.");
+};
+
+const handleEnterKey = (e) => {
+  if (e.key !== "Enter") return;
+
+  if (
+    e.target.tagName !== "INPUT" &&
+    e.target.tagName !== "TEXTAREA" &&
+    e.target.tagName !== "SELECT"
+  ) {
+    return;
+  }
+
+  e.preventDefault();
+
+  const fields = Array.from(
+    e.currentTarget.querySelectorAll(
+      "input:not([disabled]), textarea:not([disabled]), select:not([disabled])"
+    )
+  );
+
+  const currentIndex = fields.indexOf(e.target);
+
+  if (currentIndex === -1) return;
+
+  if (currentIndex < fields.length - 1) {
+    fields[currentIndex + 1].focus();
+    return;
+  }
+
+  if (activeStep < steps.length - 1 && activeStep <= maxUnlockedStep) {
+    const nextStep = activeStep + 1;
+
+    setMaxUnlockedStep((previous) =>
+      Math.max(previous, nextStep)
+    );
+
+    setActiveStep(nextStep);
+  }
+};
+
+ 
+   
 
   const handleBack = () => {
     if (activeStep > 0) {
@@ -165,64 +383,73 @@ function CreateEvent() {
   };
 
   const handleStepClick = (index) => {
-    if (index <= activeStep) {
-      setActiveStep(index);
-    }
-  };
+  setActiveStep(index);
+};
+
+
 
   const renderStep = () => {
-    switch (activeStep) {
-      case 0:
-        return (
-          <BasicDetails
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        );
+  return (
+    <fieldset
+      className="event-step-fieldset"
+      onKeyDown={handleEnterKey}
+    >
+      {(() => {
+        switch (activeStep) {
+          case 0:
+            return (
+              <BasicDetails
+                formData={formData}
+                updateFormData={updateFormData}
+              />
+            );
 
-      case 1:
-        return (
-          <Schedule
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        );
+          case 1:
+            return (
+              <Schedule
+                formData={formData}
+                updateFormData={updateFormData}
+              />
+            );
 
-      case 2:
-        return (
-          <HackathonDetails
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        );
+          case 2:
+            return (
+              <HackathonDetails
+                formData={formData}
+                updateFormData={updateFormData}
+              />
+            );
 
-      case 3:
-        return (
-          <RulesEligibility
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        );
+          case 3:
+            return (
+              <RulesEligibility
+                formData={formData}
+                updateFormData={updateFormData}
+              />
+            );
 
-      case 4:
-        return (
-          <Contact
-            formData={formData}
-            updateFormData={updateFormData}
-          />
-        );
+          case 4:
+            return (
+              <Contact
+                formData={formData}
+                updateFormData={updateFormData}
+              />
+            );
 
-      case 5:
-        return <SubmitEvent formData={formData} />;
+          case 5:
+            return <SubmitEvent formData={formData} />;
 
-      default:
-        return null;
-    }
-  };
+          default:
+            return null;
+        }
+      })()}
+    </fieldset>
+  );
+};
 
   return (
     <div className="create-event-page">
-      <Navbar />
+      
 
       <button
           className="back-home-button"
@@ -283,15 +510,18 @@ function CreateEvent() {
 
               {activeStep < steps.length - 1 ? (
                 <button
-                  className="next-button"
-                  onClick={handleNext}
-                >
-                  Save & Continue →
-                </button>
+  className="next-button"
+  onClick={handleNext}
+>
+  Save & Continue →
+</button>
               ) : (
-                <button className="submit-button">
-                  Submit for Approval
-                </button>
+                <button
+  className="submit-button"
+  onClick={submitEvent}
+>
+  Submit for Approval
+</button>
               )}
             </div>
           </div>

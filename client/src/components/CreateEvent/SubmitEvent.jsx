@@ -1,7 +1,6 @@
 import React from "react";
-// import "../../css/submitEvent.css";
 
-function SubmitEvent() {
+function SubmitEvent({ formData }) {
   return (
     <div className="submit-form">
       <div className="submit-icon">✓</div>
@@ -16,6 +15,28 @@ function SubmitEvent() {
       <div className="approval-box">
         <span>STATUS</span>
         <strong>Pending Admin Approval</strong>
+      </div>
+
+      <div className="submit-summary">
+        <div>
+          <span>Hackathon</span>
+          <strong>{formData.hackathonName || "Not provided"}</strong>
+        </div>
+
+        <div>
+          <span>Organization</span>
+          <strong>{formData.organizationName || "Not provided"}</strong>
+        </div>
+
+        <div>
+          <span>Tracks</span>
+          <strong>{formData.tracks || "Not provided"}</strong>
+        </div>
+
+        <div>
+          <span>Prizes</span>
+          <strong>{formData.prizes || "Not provided"}</strong>
+        </div>
       </div>
     </div>
   );

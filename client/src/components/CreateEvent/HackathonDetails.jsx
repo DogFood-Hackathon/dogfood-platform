@@ -1,7 +1,6 @@
 import React from "react";
-// import "../../css/hackathonDetails.css";
 
-function HackathonDetails() {
+function HackathonDetails({ formData, updateFormData }) {
   return (
     <div className="event-form">
       <div className="form-heading">
@@ -20,6 +19,10 @@ function HackathonDetails() {
           <input
             type="text"
             placeholder="e.g. AI, Web3, FinTech"
+            value={formData.tracks}
+            onChange={(e) =>
+              updateFormData("tracks", e.target.value)
+            }
           />
           <small className="field-hint">
             Add multiple tracks for your hackathon.
@@ -33,6 +36,10 @@ function HackathonDetails() {
           <input
             type="text"
             placeholder="e.g. 1st Prize - ₹50,000"
+            value={formData.prizes}
+            onChange={(e) =>
+              updateFormData("prizes", e.target.value)
+            }
           />
           <small className="field-hint">
             Add prizes such as 1st, 2nd and 3rd.
@@ -44,6 +51,10 @@ function HackathonDetails() {
           <textarea
             rows="4"
             placeholder="Describe who can participate"
+            value={formData.eligibility}
+            onChange={(e) =>
+              updateFormData("eligibility", e.target.value)
+            }
           ></textarea>
         </div>
 
@@ -53,6 +64,10 @@ function HackathonDetails() {
             type="number"
             min="1"
             placeholder="1"
+            value={formData.minTeamSize}
+            onChange={(e) =>
+              updateFormData("minTeamSize", e.target.value)
+            }
           />
         </div>
 
@@ -62,6 +77,10 @@ function HackathonDetails() {
             type="number"
             min="1"
             placeholder="4"
+            value={formData.maxTeamSize}
+            onChange={(e) =>
+              updateFormData("maxTeamSize", e.target.value)
+            }
           />
         </div>
       </div>

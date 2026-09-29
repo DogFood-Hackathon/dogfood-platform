@@ -1,7 +1,6 @@
 import React from "react";
-// import "../../css/rulesEligibility.css";
 
-function RulesEligibility() {
+function RulesEligibility({ formData, updateFormData }) {
   return (
     <div className="event-form">
       <div className="form-heading">
@@ -18,6 +17,10 @@ function RulesEligibility() {
           <textarea
             rows="7"
             placeholder="Enter the rules and guidelines for participants"
+            value={formData.rules}
+            onChange={(e) =>
+              updateFormData("rules", e.target.value)
+            }
           ></textarea>
         </div>
 
@@ -26,6 +29,10 @@ function RulesEligibility() {
           <textarea
             rows="7"
             placeholder="Describe what participants must submit"
+            value={formData.submissionRequirements}
+            onChange={(e) =>
+              updateFormData("submissionRequirements", e.target.value)
+            }
           ></textarea>
         </div>
       </div>

@@ -1,0 +1,108 @@
+.admin-navbar {
+  height: 72px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: rgba(11, 13, 18, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: #f5f7fa;
+  position: relative;
+  z-index: 10;
+}
+
+.admin-navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #f5f7fa;
+}
+
+.admin-navbar-logo span {
+  color: #8b5cf6;
+  font-size: 22px;
+  text-shadow: 0 0 14px rgba(139, 92, 246, 0.45);
+}
+
+.admin-navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.admin-navbar-center span {
+  color: #a8afbd;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.admin-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.admin-notification-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #9299a8;
+  font-size: 19px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-notification-btn:hover {
+  color: #f5f7fa;
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-profile-avatar {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-profile-info strong {
+  color: #f5f7fa;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-profile-info span {
+  color: #7f8798;
+  font-size: 11px;
+  font-weight: 500;
+}
