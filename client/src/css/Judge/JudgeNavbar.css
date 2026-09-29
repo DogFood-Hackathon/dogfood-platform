@@ -1,0 +1,95 @@
+.judge-navbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  box-sizing: border-box;
+  background: rgba(11, 13, 18, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  color: #f5f7fa;
+  position: relative;
+  z-index: 1000;
+}
+
+.judge-navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #f5f7fa;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.judge-navbar-logo span {
+  color: #8b5cf6;
+  font-size: 21px;
+}
+
+.judge-navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #9299a8;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.judge-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.judge-notification-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #b8becb;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.judge-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.judge-profile-avatar {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #c4b5fd;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.judge-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.judge-profile-info strong {
+  color: #f5f7fa;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.judge-profile-info span {
+  color: #9299a8;
+  font-size: 11px;
+}

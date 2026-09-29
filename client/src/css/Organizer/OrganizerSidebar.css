@@ -1,0 +1,167 @@
+.organizer-sidebar {
+  width: 230px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 70px);
+  border-right: 1px solid #272c36;
+  background: rgba(11, 13, 18, 0.88);
+  backdrop-filter: blur(14px);
+  box-sizing: border-box;
+}
+
+.organizer-sidebar-header {
+  padding: 24px 20px 14px;
+}
+
+.organizer-sidebar-label {
+  color: #666e7d;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.organizer-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 12px;
+}
+
+.organizer-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 11px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: #858c9b;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.organizer-sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.035);
+  color: #dce0e7;
+}
+
+.organizer-sidebar-link.active {
+  border-color: rgba(139, 92, 246, 0.18);
+  background: rgba(139, 92, 246, 0.1);
+  color: #c4b5fd;
+}
+
+.organizer-sidebar-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #4b5260;
+  transition: 0.2s ease;
+}
+
+.organizer-sidebar-link.active .organizer-sidebar-dot {
+  background: #8b5cf6;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+}
+
+.organizer-sidebar-link:hover .organizer-sidebar-dot {
+  background: #8b5cf6;
+}
+
+.organizer-sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding: 16px 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.organizer-sidebar-create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 7px;
+  background: rgba(139, 92, 246, 0.12);
+  color: #c4b5fd;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.organizer-sidebar-create span {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.organizer-sidebar-create:hover {
+  border-color: rgba(139, 92, 246, 0.55);
+  background: rgba(139, 92, 246, 0.18);
+  color: #ddd6fe;
+}
+
+.organizer-back-link {
+  padding: 9px 11px;
+}
+
+@media (max-width: 850px) {
+  .organizer-sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 700px) {
+  .organizer-sidebar {
+    width: 65px;
+  }
+
+  .organizer-sidebar-header {
+    padding: 22px 0 12px;
+    text-align: center;
+  }
+
+  .organizer-sidebar-label {
+    font-size: 0;
+  }
+
+  .organizer-sidebar-label::after {
+    content: "ORG";
+    font-size: 9px;
+  }
+
+  .organizer-sidebar-menu {
+    padding: 8px;
+  }
+
+  .organizer-sidebar-link {
+    justify-content: center;
+    padding: 11px 8px;
+  }
+
+  .organizer-sidebar-link span:last-child {
+    display: none;
+  }
+
+  .organizer-sidebar-bottom {
+    padding: 12px 8px;
+  }
+
+  .organizer-sidebar-create {
+    font-size: 0;
+  }
+
+  .organizer-sidebar-create span {
+    font-size: 18px;
+  }
+
+  .organizer-back-link {
+    justify-content: center;
+  }
+}

@@ -13,6 +13,10 @@ function AdminSidebar() {
     { label: "Teams", path: "/admin/teams" },
     { label: "Submissions", path: "/admin/submissions" },
     { label: "Judges", path: "/admin/judges" },
+    {
+  label: "Judging",
+  path: "/admin/judging"
+},
     { label: "Results", path: "/admin/results" }
   ];
 

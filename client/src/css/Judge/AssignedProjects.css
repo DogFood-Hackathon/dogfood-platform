@@ -1,0 +1,261 @@
+.assigned-projects {
+  width: 100%;
+}
+
+.assigned-projects-header {
+  margin-bottom: 26px;
+}
+
+.assigned-projects-header h1 {
+  margin: 0 0 7px;
+  color: #f5f7fa;
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.assigned-projects-header p {
+  margin: 0;
+  color: #9299a8;
+  font-size: 13px;
+}
+
+.assigned-projects-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.assigned-project-stat {
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  background: rgba(17, 20, 27, 0.58);
+  backdrop-filter: blur(15px);
+}
+
+.assigned-project-stat span {
+  display: block;
+  margin-bottom: 7px;
+  color: #737b8c;
+  font-size: 11px;
+}
+
+.assigned-project-stat strong {
+  color: #f5f7fa;
+  font-size: 25px;
+}
+
+.assigned-projects-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.assigned-projects-search {
+  flex: 1;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  background: rgba(17, 20, 27, 0.62);
+}
+
+.assigned-projects-search span {
+  color: #737b8c;
+  font-size: 18px;
+}
+
+.assigned-projects-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f5f7fa;
+  font-size: 12px;
+}
+
+.assigned-projects-search input::placeholder {
+  color: #676f7f;
+}
+
+.assigned-project-filters {
+  display: flex;
+  gap: 6px;
+}
+
+.assigned-project-filters button {
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  background: rgba(17, 20, 27, 0.58);
+  color: #737b8c;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.assigned-project-filters button:hover {
+  color: #b8becb;
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.assigned-project-filters button.active {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.12);
+  color: #c4b5fd;
+}
+
+.assigned-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.assigned-project-card {
+  display: grid;
+  grid-template-columns: 44px 1fr auto auto;
+  align-items: center;
+  gap: 15px;
+  padding: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  background: rgba(17, 20, 27, 0.58);
+  backdrop-filter: blur(15px);
+  transition: 0.2s ease;
+}
+
+.assigned-project-card:hover {
+  border-color: rgba(139, 92, 246, 0.22);
+  background: rgba(20, 23, 32, 0.7);
+}
+
+.assigned-project-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+}
+
+.assigned-project-info h2 {
+  margin: 0 0 6px;
+  color: #e8eaf0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.assigned-project-meta {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 6px;
+  color: #737b8c;
+  font-size: 10px;
+}
+
+.assigned-project-submitted {
+  color: #5f6777;
+  font-size: 9px;
+}
+
+.assigned-project-status-wrapper {
+  min-width: 120px;
+}
+
+.assigned-project-status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.assigned-project-status.pending {
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  background: rgba(245, 158, 11, 0.08);
+  color: #fbbf24;
+}
+
+.assigned-project-status.completed {
+  border: 1px solid rgba(34, 197, 94, 0.18);
+  background: rgba(34, 197, 94, 0.08);
+  color: #86efac;
+}
+
+.assigned-project-action {
+  min-width: 105px;
+  padding: 8px 12px;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 7px;
+  background: rgba(139, 92, 246, 0.08);
+  color: #c4b5fd;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.assigned-project-action:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.16);
+}
+
+.assigned-projects-empty {
+  padding: 60px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 13px;
+  background: rgba(17, 20, 27, 0.58);
+  text-align: center;
+}
+
+.assigned-projects-empty > div {
+  margin-bottom: 10px;
+  color: #8b5cf6;
+  font-size: 28px;
+}
+
+.assigned-projects-empty h3 {
+  margin: 0 0 6px;
+  color: #dfe2e8;
+  font-size: 14px;
+}
+
+.assigned-projects-empty p {
+  margin: 0;
+  color: #737b8c;
+  font-size: 11px;
+}
+
+@media (max-width: 850px) {
+  .assigned-projects-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .assigned-project-filters {
+    overflow-x: auto;
+  }
+
+  .assigned-project-card {
+    grid-template-columns: 44px 1fr;
+  }
+
+  .assigned-project-status-wrapper,
+  .assigned-project-action {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .assigned-projects-stats {
+    grid-template-columns: 1fr;
+  }
+}

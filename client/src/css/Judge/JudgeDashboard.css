@@ -1,0 +1,341 @@
+.judge-dashboard {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.judge-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.judge-dashboard-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #f5f7fa;
+  letter-spacing: -0.5px;
+}
+
+.judge-dashboard-header p {
+  margin: 7px 0 0;
+  color: #9299a8;
+  font-size: 14px;
+}
+
+.judge-dashboard-projects-btn {
+  border: 1px solid #303641;
+  background: #11141b;
+  color: #e8ebf0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.judge-dashboard-projects-btn:hover {
+  border-color: #8b5cf6;
+  background: #171b24;
+  color: #ffffff;
+}
+
+.judge-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.judge-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 105px;
+  padding: 20px;
+  border: 1px solid #272c36;
+  border-radius: 12px;
+  background: rgba(17, 20, 27, 0.82);
+  backdrop-filter: blur(12px);
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+.judge-stat-card:hover {
+  border-color: #3a4050;
+  transform: translateY(-2px);
+}
+
+.judge-stat-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 10px;
+  background: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+  font-size: 18px;
+}
+
+.judge-stat-card span {
+  display: block;
+  margin-bottom: 5px;
+  color: #9299a8;
+  font-size: 12px;
+}
+
+.judge-stat-card strong {
+  display: block;
+  color: #f5f7fa;
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.judge-stat-card small {
+  display: block;
+  margin-top: 5px;
+  color: #6f7685;
+  font-size: 11px;
+}
+
+.judge-projects-section {
+  padding: 24px;
+  border: 1px solid #272c36;
+  border-radius: 14px;
+  background: rgba(17, 20, 27, 0.82);
+  backdrop-filter: blur(12px);
+}
+
+.judge-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.judge-section-header h2 {
+  margin: 0;
+  color: #f5f7fa;
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.judge-section-header p {
+  margin: 6px 0 0;
+  color: #7f8796;
+  font-size: 13px;
+}
+
+.judge-view-all-btn {
+  border: none;
+  background: transparent;
+  color: #a78bfa;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 4px;
+  transition: 0.2s ease;
+}
+
+.judge-view-all-btn:hover {
+  color: #c4b5fd;
+}
+
+.judge-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.judge-project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 18px;
+  border: 1px solid #272c36;
+  border-radius: 10px;
+  background: rgba(11, 13, 18, 0.6);
+  transition: 0.2s ease;
+}
+
+.judge-project-card:hover {
+  border-color: #383e4b;
+  background: rgba(23, 27, 36, 0.7);
+}
+
+.judge-project-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.judge-project-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+  font-size: 17px;
+}
+
+.judge-project-main h3 {
+  margin: 0;
+  color: #f2f4f7;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.judge-project-meta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 6px;
+  color: #8e96a5;
+  font-size: 12px;
+}
+
+.judge-project-meta span:nth-child(2) {
+  color: #505764;
+}
+
+.judge-project-submitted {
+  display: block;
+  margin-top: 5px;
+  color: #666e7d;
+  font-size: 11px;
+}
+
+.judge-project-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.judge-project-status {
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.judge-project-status.pending {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+.judge-project-status.completed {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.judge-project-action {
+  min-width: 112px;
+  padding: 8px 12px;
+  border: 1px solid #343a47;
+  border-radius: 7px;
+  background: #171b24;
+  color: #e7e9ed;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.judge-project-action:hover {
+  border-color: #8b5cf6;
+  background: #211a35;
+  color: #ffffff;
+}
+
+.judge-full-projects-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px;
+  border: 1px solid #303641;
+  border-radius: 8px;
+  background: #11141b;
+  color: #a78bfa;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.judge-full-projects-btn:hover {
+  border-color: #8b5cf6;
+  background: #171326;
+  color: #c4b5fd;
+}
+
+@media (max-width: 1100px) {
+  .judge-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .judge-dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .judge-project-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .judge-project-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 550px) {
+  .judge-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .judge-projects-section {
+    padding: 17px;
+  }
+
+  .judge-section-header {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .judge-project-main {
+    align-items: flex-start;
+  }
+
+  .judge-project-meta {
+    flex-wrap: wrap;
+  }
+
+  .judge-project-right {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .judge-project-action {
+    width: 100%;
+  }
+}

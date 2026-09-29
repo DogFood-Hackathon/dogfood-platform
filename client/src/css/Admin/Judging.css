@@ -1,0 +1,292 @@
+.admin-judging {
+  width: 100%;
+}
+
+.admin-judging-header {
+  margin-bottom: 28px;
+}
+
+.admin-judging-header h1 {
+  margin: 0 0 7px;
+  color: #f5f7fa;
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.admin-judging-header p {
+  margin: 0;
+  color: #9299a8;
+  font-size: 14px;
+}
+
+.admin-judging-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.admin-judging-stat {
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 13px;
+  background: rgba(17, 20, 27, 0.62);
+  backdrop-filter: blur(15px);
+}
+
+.admin-judging-stat span {
+  margin-bottom: 8px;
+  color: #9299a8;
+  font-size: 12px;
+}
+
+.admin-judging-stat strong {
+  color: #f5f7fa;
+  font-size: 27px;
+}
+
+.admin-judging-stat small {
+  margin-top: 5px;
+  color: #676f7f;
+  font-size: 10px;
+}
+
+.admin-judging-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.admin-judging-search {
+  flex: 1;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  background: rgba(17, 20, 27, 0.62);
+}
+
+.admin-judging-search span {
+  color: #737b8c;
+  font-size: 18px;
+}
+
+.admin-judging-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f5f7fa;
+  font-size: 13px;
+}
+
+.admin-judging-search input::placeholder {
+  color: #676f7f;
+}
+
+.admin-judging-toolbar select {
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  outline: none;
+  background: #11141b;
+  color: #b8becb;
+  font-size: 12px;
+}
+
+.admin-judging-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-judging-card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 0.6fr auto;
+  align-items: center;
+  gap: 25px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 13px;
+  background: rgba(17, 20, 27, 0.58);
+  backdrop-filter: blur(15px);
+  transition: 0.2s ease;
+}
+
+.admin-judging-card:hover {
+  border-color: rgba(139, 92, 246, 0.22);
+  background: rgba(20, 23, 32, 0.7);
+}
+
+.admin-judging-project {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.admin-judging-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+}
+
+.admin-judging-project h2 {
+  margin: 0 0 6px;
+  color: #e8eaf0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-judging-meta {
+  display: flex;
+  gap: 7px;
+  color: #737b8c;
+  font-size: 10px;
+}
+
+.admin-judging-progress {
+  min-width: 150px;
+}
+
+.admin-judging-progress-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.admin-judging-progress-top span {
+  color: #737b8c;
+  font-size: 10px;
+}
+
+.admin-judging-progress-top strong {
+  color: #b8becb;
+  font-size: 10px;
+}
+
+.admin-judging-progress-bar {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.admin-judging-progress-bar div {
+  height: 100%;
+  border-radius: inherit;
+  background: #8b5cf6;
+}
+
+.admin-judging-progress-text {
+  display: block;
+  margin-top: 5px;
+  color: #5f6777;
+  font-size: 9px;
+}
+
+.admin-judging-score {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-judging-score span {
+  color: #737b8c;
+  font-size: 10px;
+}
+
+.admin-judging-score strong {
+  margin-top: 3px;
+  color: #c4b5fd;
+  font-size: 21px;
+}
+
+.admin-judging-score small {
+  color: #5f6777;
+  font-size: 9px;
+}
+
+.admin-judging-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-judging-status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.admin-judging-status.complete {
+  border: 1px solid rgba(34, 197, 94, 0.18);
+  background: rgba(34, 197, 94, 0.1);
+  color: #86efac;
+}
+
+.admin-judging-status.progress {
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+}
+
+.admin-judging-actions button {
+  padding: 8px 12px;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 7px;
+  background: rgba(139, 92, 246, 0.08);
+  color: #c4b5fd;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-judging-actions button:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.16);
+}
+
+@media (max-width: 1100px) {
+  .admin-judging-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-judging-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-judging-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-judging-toolbar {
+    flex-direction: column;
+  }
+
+  .admin-judging-card {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-judging-actions {
+    justify-content: space-between;
+  }
+}
