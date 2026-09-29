@@ -32,7 +32,7 @@ function Navbar() {
       <div className="navbar-links">
         <Link to="/explore-events">Events</Link>
         <a href="#how-it-works">How it works</a>
-        <a href="#about">About</a>
+        <Link to="/about">About</Link>
       </div>
 
       <div className="navbar-actions">

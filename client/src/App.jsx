@@ -27,6 +27,7 @@ import OrganizerDashboard from "./pages/Organizer/OrganizerDashboard";
 import OrganizerHackathons from "./pages/Organizer/OrganizerHackathons";
 import OrganizerParticipants from "./pages/Organizer/OrganizerParticipants";
 import OrganizerTeams from "./pages/Organizer/OrganizerTeams";
+import AboutUs from "./pages/AboutUs";
 
 function AppContent() {
   const location = useLocation();
@@ -44,6 +45,7 @@ function AppContent() {
         <Route path="/create-event" element={<CreateEvent />} />
         <Route path="/explore-events" element={<ExploreEvents />} />
         <Route path="/my-created-hackathons" element={<MyCreatedHackathons />} />
+        <Route path="/about" element={<AboutUs />} />
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />
